@@ -1,10 +1,12 @@
 Como usar?
-- Abrir o GitConfig.exe
+- Coloque o executavel dentro da pasta aonde contenha os arquivos que desja enviar.
+- Abra o GitConfig.exe
 - Selecionar o proxy (escola, ou outro)
-- Adicionar informaÁıes (nome, email e diretÛrio)
-- Enviar.
+- Adicione as informa√ß√µes (nome, email e diret√≥rio)
+- Clique em Enviar.
 
 AVISOS!
-!!! N√O RENOMEAR O NOME DO PROGRAMA !!!
+!!! N√ÉO RENOMEAR O NOME DO PROGRAMA !!!
+!!! Quando pedir senha, os caracteres ficar√£o ocultos !!!
 
 GitConfig-v2.5 BETA
