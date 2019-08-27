@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/08/22 20:28:24.000.884,=C:\Users\Douglas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/08/25 23:40:00.000.212,=C:\Users\Douglas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/08/25 23:40:11.000.059,C:\Users\Douglas\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Douglas\Documents\Embarcadero\Studio\Projects\GitConfig.dproj</Transaction>
+    <Transaction>2019/08/25 23:40:22.000.369,C:\Users\Douglas\Documents\Embarcadero\Studio\Projects\GitConfig.dproj=C:\Users\Douglas\Desktop\GitConfig2.5\GitConfig.dproj</Transaction>
+    <Transaction>2019/08/25 23:40:26.000.106,=C:\Users\Douglas\Desktop\GitConfig2.5\Unit1.pas</Transaction>
+    <Transaction>2019/08/25 23:40:30.000.196,=C:\Users\Douglas\Desktop\GitConfig2.5\Unit2.pas</Transaction>
+    <Transaction>2019/08/25 23:40:34.000.136,=C:\Users\Douglas\Desktop\GitConfig2.5\Unit3.pas</Transaction>
+    <Transaction>2019/08/25 23:40:39.000.586,=C:\Users\Douglas\Desktop\GitConfig2.5\Unit4.pas</Transaction>
+  </Transactions>
+</BorlandProject>
