@@ -12286,9 +12286,6 @@ object inicio: Tinicio
     ParentFont = False
     TabOrder = 3
     Visible = False
-    ExplicitTop = 4
-    ExplicitWidth = 185
-    ExplicitHeight = 89
   end
   object BitBtn2: TBitBtn
     Left = 8
@@ -12311,14 +12308,15 @@ object inicio: Tinicio
     Top = 248
     object Config1: TMenuItem
       Caption = 'Config'
+      Hint = 'Configura'#231#245'es'
       object Proxy1: TMenuItem
         Caption = 'Proxy'
         object Etec1: TMenuItem
-          Caption = 'Etec - AlunoAluno'
+          Caption = 'Etec AlunoAluno'
           OnClick = Etec1Click
         end
         object Outro1: TMenuItem
-          Caption = 'Outro'
+          Caption = 'Outro Proxy'
           OnClick = Outro1Click
         end
         object RemoverProxy1: TMenuItem
@@ -12337,19 +12335,21 @@ object inicio: Tinicio
       end
       object Sair1: TMenuItem
         Caption = 'Sair'
+        Hint = 'Encerrar tarefa'
         ShortCut = 36933
         OnClick = Sair1Click
       end
     end
     object Sobre1: TMenuItem
       Caption = 'Sobre'
+      Hint = 'Creditos do criador'
       OnClick = Sobre1Click
     end
     object GitBash1: TMenuItem
       Caption = 'GitBash'
       object Ativar1: TMenuItem
         Caption = 'Ativar'
-        ShortCut = 16449
+        ShortCut = 49217
         OnClick = Ativar1Click
       end
       object N1: TMenuItem
@@ -12357,27 +12357,27 @@ object inicio: Tinicio
       end
       object Novorepositrio1: TMenuItem
         Caption = 'Novo reposit'#243'rio'
-        ShortCut = 16462
+        ShortCut = 16449
         OnClick = Novorepositrio1Click
       end
       object Adicionararquivos1: TMenuItem
         Caption = 'Adicionar arquivos'
-        ShortCut = 16454
+        ShortCut = 16467
         OnClick = Adicionararquivos1Click
       end
       object Enviararquivos1: TMenuItem
         Caption = 'Adicionar Commit'
-        ShortCut = 16457
+        ShortCut = 16452
         OnClick = Enviararquivos1Click
       end
       object AdicionarCommit1: TMenuItem
         Caption = 'Adicionar Remote'
-        ShortCut = 16466
+        ShortCut = 16454
         OnClick = AdicionarCommit1Click
       end
       object Enviararquivos2: TMenuItem
         Caption = 'Enviar arquivos'
-        ShortCut = 16469
+        ShortCut = 16455
         OnClick = Enviararquivos2Click
       end
       object N2: TMenuItem
@@ -12387,6 +12387,11 @@ object inicio: Tinicio
         Caption = 'Clonar arquivos'
         ShortCut = 49219
         OnClick = Clonararquivos1Click
+      end
+      object Atualizararquivos1: TMenuItem
+        Caption = 'Atualizar arquivos'
+        ShortCut = 49241
+        OnClick = Atualizararquivos1Click
       end
       object N3: TMenuItem
         Caption = '-'

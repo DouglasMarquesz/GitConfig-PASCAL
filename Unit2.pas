@@ -19,6 +19,7 @@ type
 
 var
   Form2: TForm2;
+  Proxy: string;
 
 implementation
 
@@ -29,14 +30,38 @@ uses
 Unit1;
 
 procedure TForm2.BitBtn1Click(Sender: TObject);
-var
-Proxy: string;
 begin
   Proxy := edit1.Text;
   inicio.Show;
   WinExec('cmd.exe /C git config --global http.proxy http://aluno:aluno@192.168.0.1:8080', sw_hide);
-  Showmessage('Proxy definido para: '+proxy);
-  MessageDlg('Programa em desenvolvimento, algumas parte pode não estar funcionando corretamente como esta!', mtWarning, [mbOk], 0);
+  if (inicio.Ativar1.Checked = false) or (inicio.Ativar1.Checked = true) then
+  begin
+    inicio.Ativar1.Checked := true;
+    inicio.Ativar1.caption := 'Desativar';
+    inicio.Memo1.Visible := true;
+    inicio.Bitbtn2.visible := true;
+    form2.Hide;
+    inicio.Memo1.Lines.Add('git config --global http.proxy http://'+proxy);
+    sleep(1200);
+    if (Pos('Tainara', proxy)) or Pos('Victoria', proxy) or Pos('Santos', proxy) or (Pos('Guidorizzi', proxy)) or Pos('Bardelin', proxy) or Pos('Lima', proxy) <> 0 then
+      begin
+        inicio.Memo1.Lines.Add('Humm, esse nome me parece familiar.')
+      end
+        else
+      begin
+        if MessageDlg('Proxy aual: ('+proxy+') Confirmar? ', mtConfirmation, [mbYes,mbNo], 0 ) = mrYes then
+          begin
+            inicio.BitBtn2.Click;
+          end;
+      end;
+  end
+    else
+  begin
+    inicio.Ativar1.Checked := false;
+    inicio.Ativar1.caption := 'Ativar';
+    inicio.Memo1.Visible := false;
+    inicio.Bitbtn2.visible := false;
+  end;
   Form2.Close;
 end;
 

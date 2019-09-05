@@ -41,9 +41,10 @@ URLMON, unit2, unit4;
 procedure TForm3.FormKeyPress(Sender: TObject; var Key: Char);
 begin
 if (key = #13) and ((form2.Edit1.Text='Maria Victoria') or (form2.Edit1.Text='Tainara Guidorizzi') or (form2.Edit1.Text='Ana Carolina Lima')) then
-begin
+  begin
    form4.Show;
-end;
+   form3.Close;
+  end;
 end;
 
 procedure TForm3.Image3Click(Sender: TObject);

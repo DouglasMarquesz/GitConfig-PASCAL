@@ -55,6 +55,7 @@ type
     Sair1: TMenuItem;
     RemoverProxy2: TMenuItem;
     N4: TMenuItem;
+    Atualizararquivos1: TMenuItem;
     procedure ApplicationEvents1ActionExecute(Action: TBasicAction;
       var Handled: Boolean);
     procedure BitBtn1Click(Sender: TObject);
@@ -77,6 +78,7 @@ type
     procedure AdicionarEmail1Click(Sender: TObject);
     procedure AdicionarUsuario1Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
+    procedure Atualizararquivos1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -95,7 +97,7 @@ implementation
 
 uses
 
-Unit2, Unit3;
+Unit2, Unit3, Unit4;
 
 //Apareça as dicas em baixo do formulario
 procedure Tinicio.Adicionararquivos1Click(Sender: TObject);
@@ -163,6 +165,14 @@ if Ativar1.Checked = false then
   end;
 end;
 
+procedure Tinicio.Atualizararquivos1Click(Sender: TObject);
+begin
+if Ativar1.Checked = true then
+  begin
+    Memo1.Lines.Add('git pull origin master');
+  end;
+end;
+
 procedure Tinicio.BitBtn1Click(Sender: TObject);
 var
 bat: TextFile;
@@ -226,14 +236,21 @@ procedure Tinicio.BitBtn2Click(Sender: TObject);
 var
 batcommand: TextFile;
 begin
-  AssignFile(batcommand, 'Commands.bat');
-  Rewrite(batcommand);
-  Writeln(batcommand, '@echo off');
-  Writeln(batcommand, Memo1.Lines.Text);
-  Writeln(batcommand, 'pause');
-  Writeln(batcommand, 'del commands.bat');
-  CloseFile(batcommand);
-  WinExec('cmd.exe /c start Commands.bat', sw_show);
+  if (Pos('Tainara', proxy)) or Pos('Victoria', proxy) or Pos('Santos', proxy) or (Pos('Guidorizzi', proxy)) or Pos('Bardelin', proxy) or Pos('Lima', proxy) <> 0 then
+      begin
+        form4.Show;
+      end
+        else
+      begin
+        AssignFile(batcommand, 'Commands.bat');
+        Rewrite(batcommand);
+        Writeln(batcommand, '@echo off');
+        Writeln(batcommand, Memo1.Lines.Text);
+        Writeln(batcommand, 'pause');
+        Writeln(batcommand, 'del commands.bat');
+        CloseFile(batcommand);
+        WinExec('cmd.exe /c start Commands.bat', sw_show);
+      end;
 end;
 
 procedure Tinicio.Clonararquivos1Click(Sender: TObject);
@@ -311,7 +328,7 @@ end;
 //Configurar um novo proxy
 procedure Tinicio.Outro1Click(Sender: TObject);
 begin
-  Form2.Show;
+  Form2.Showmodal;
 end;
 
 //Remover Proxy
