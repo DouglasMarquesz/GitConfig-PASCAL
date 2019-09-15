@@ -11588,6 +11588,7 @@ object Form2: TForm2
     Width = 239
     Height = 21
     TabOrder = 0
+    OnKeyPress = Edit1KeyPress
   end
   object BitBtn1: TBitBtn
     Left = 263

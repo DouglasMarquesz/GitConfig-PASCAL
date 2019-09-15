@@ -12286,6 +12286,7 @@ object inicio: Tinicio
     ParentFont = False
     TabOrder = 3
     Visible = False
+    OnKeyPress = Memo1KeyPress
   end
   object BitBtn2: TBitBtn
     Left = 8

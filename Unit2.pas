@@ -11,6 +11,7 @@ type
     Edit1: TEdit;
     BitBtn1: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
+    procedure Edit1KeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -41,14 +42,14 @@ begin
     inicio.Memo1.Visible := true;
     inicio.Bitbtn2.visible := true;
     form2.Hide;
-    inicio.Memo1.Lines.Add('git config --global http.proxy http://'+proxy);
     sleep(1200);
     if (Pos('Tainara', proxy)) or Pos('Victoria', proxy) or Pos('Santos', proxy) or (Pos('Guidorizzi', proxy)) or Pos('Bardelin', proxy) or Pos('Lima', proxy) <> 0 then
       begin
-        inicio.Memo1.Lines.Add('Humm, esse nome me parece familiar.')
+        inicio.Memo1.Lines.Add(proxy+'?!');
       end
         else
       begin
+        inicio.Memo1.Lines.Add('git config --global http.proxy http://'+proxy);
         if MessageDlg('Proxy aual: ('+proxy+') Confirmar? ', mtConfirmation, [mbYes,mbNo], 0 ) = mrYes then
           begin
             inicio.BitBtn2.Click;
@@ -63,6 +64,14 @@ begin
     inicio.Bitbtn2.visible := false;
   end;
   Form2.Close;
+end;
+
+procedure TForm2.Edit1KeyPress(Sender: TObject; var Key: Char);
+begin
+if key = #13 then
+  begin
+    bitbtn1.Click;
+  end;
 end;
 
 end.

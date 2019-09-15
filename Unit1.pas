@@ -79,6 +79,7 @@ type
     procedure AdicionarUsuario1Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
     procedure Atualizararquivos1Click(Sender: TObject);
+    procedure Memo1KeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -212,7 +213,7 @@ begin
     end;
 
   WinExec('cmd.exe /c start Config.bat', sw_hide);
-  MessageDlg('Caso o arquivo não seja enviado, verifique o proxy utilizado.', mtWarning, [MbOk], 0);
+  sleep(3000);
   if MessageDlg('Arquivo configurado, Enviar? ', mtConfirmation, [mbYes,mbNo], 0 ) = mrYes then
     begin
       WinExec('cmd.exe /c del Config.bat', sw_show);
@@ -281,6 +282,7 @@ end;
 procedure Tinicio.Etec1Click(Sender: TObject);
 begin
   WinExec('cmd.exe /C git config --global http.proxy http://aluno:aluno@192.168.0.1:8080', sw_hide);
+  sleep(200);
   Showmessage('Proxy atual: Aluno.Aluno - 192.168.0.1:8080');
 end;
 
@@ -314,6 +316,14 @@ if Lembrar1.checked=false then
     edit2.Enabled := true;
     edit1.text := '';
     edit2.text := '';
+  end;
+end;
+
+procedure Tinicio.Memo1KeyPress(Sender: TObject; var Key: Char);
+begin
+if key = #13 then
+  begin
+    bitbtn2.click;
   end;
 end;
 
