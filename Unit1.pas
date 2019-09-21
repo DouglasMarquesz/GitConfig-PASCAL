@@ -55,7 +55,9 @@ type
     Sair1: TMenuItem;
     RemoverProxy2: TMenuItem;
     N4: TMenuItem;
-    Atualizararquivos1: TMenuItem;
+    OpenDialog1: TOpenDialog;
+    utorial1: TMenuItem;
+    Oquegit1: TMenuItem;
     procedure ApplicationEvents1ActionExecute(Action: TBasicAction;
       var Handled: Boolean);
     procedure BitBtn1Click(Sender: TObject);
@@ -78,8 +80,7 @@ type
     procedure AdicionarEmail1Click(Sender: TObject);
     procedure AdicionarUsuario1Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
-    procedure Atualizararquivos1Click(Sender: TObject);
-    procedure Memo1KeyPress(Sender: TObject; var Key: Char);
+    procedure Oquegit1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -98,7 +99,7 @@ implementation
 
 uses
 
-Unit2, Unit3, Unit4;
+Unit2, Unit3, Unit4, Unit5;
 
 //Apareça as dicas em baixo do formulario
 procedure Tinicio.Adicionararquivos1Click(Sender: TObject);
@@ -166,14 +167,6 @@ if Ativar1.Checked = false then
   end;
 end;
 
-procedure Tinicio.Atualizararquivos1Click(Sender: TObject);
-begin
-if Ativar1.Checked = true then
-  begin
-    Memo1.Lines.Add('git pull origin master');
-  end;
-end;
-
 procedure Tinicio.BitBtn1Click(Sender: TObject);
 var
 bat: TextFile;
@@ -213,9 +206,10 @@ begin
     end;
 
   WinExec('cmd.exe /c start Config.bat', sw_hide);
-  sleep(3000);
-  if MessageDlg('Arquivo configurado, Enviar? ', mtConfirmation, [mbYes,mbNo], 0 ) = mrYes then
+  sleep(2000);
+  if MessageDlg('Arquivo configurado! Confirmar envio? ', mtConfirmation, [mbYes,mbNo], 0 ) = mrYes then
     begin
+      MessageDlg('Aguarde, o arquivo sera enviado após o CMD fechar caso não ocorra nenhum erro.', mtConfirmation, [mbOk], 0);
       WinExec('cmd.exe /c del Config.bat', sw_show);
       WinExec('git.exe push -u origin master', sw_show);
       if Lembrar=false then
@@ -289,12 +283,27 @@ end;
 procedure Tinicio.FormCreate(Sender: TObject);
 var
 dirName: string;
+NoInstall: integer;
 begin
 lembrar:=false;
+NoInstall:=0;
   if directoryexists('.git') then
     begin
-      MessageDlg('A pasta .git já foi criada anteriormente!', mtWarning, [mbOk], 0 );
+      MessageDlg('Aviso - A pasta .git já foi criada anteriormente!', mtWarning, [mbOk], 0 );
     end;
+      if not directoryexists('C:\Program Files (x86)\Git') then
+        begin
+          NoInstall:=NoInstall+1;
+        end;
+          if not directoryexists('C:\Program Files\Git') then
+            begin
+              NoInstall:=NoInstall+1;
+            end;
+              if NoInstall=2 then
+                begin
+                  MessageDlg('Erro N1M1 - Instale o Git para que possa utilizar o programa!', mtWarning, [mbOk], 0);
+                  Application.Terminate;
+                end;
 end;
 
 procedure Tinicio.Lembrar1Click(Sender: TObject);
@@ -319,14 +328,6 @@ if Lembrar1.checked=false then
   end;
 end;
 
-procedure Tinicio.Memo1KeyPress(Sender: TObject; var Key: Char);
-begin
-if key = #13 then
-  begin
-    bitbtn2.click;
-  end;
-end;
-
 procedure Tinicio.Novorepositrio1Click(Sender: TObject);
 begin
 if Ativar1.Checked = true then
@@ -336,6 +337,11 @@ if Ativar1.Checked = true then
 end;
 
 //Configurar um novo proxy
+procedure Tinicio.Oquegit1Click(Sender: TObject);
+begin
+  form5.showmodal;
+end;
+
 procedure Tinicio.Outro1Click(Sender: TObject);
 begin
   Form2.Showmodal;

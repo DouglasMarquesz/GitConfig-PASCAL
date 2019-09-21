@@ -12169,6 +12169,8 @@ object inicio: Tinicio
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 0
     end
     object Edit2: TEdit
@@ -12176,13 +12178,15 @@ object inicio: Tinicio
       Top = 116
       Width = 266
       Height = 27
-      Hint = 'Email utlizado para cria'#231#227'o da conta GitHub'
+      Hint = 'Seu email do Github'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 1
     end
   end
@@ -12216,9 +12220,9 @@ object inicio: Tinicio
     object Label8: TLabel
       Left = 8
       Top = 29
-      Width = 347
+      Width = 365
       Height = 16
-      Caption = 'exemplo: https://github.com/DouglasMarquesz/meu_arquivo'
+      Caption = 'exemplo: https://github.com/DouglasMarquesz/meu_arquivo.git'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -12245,6 +12249,8 @@ object inicio: Tinicio
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 0
     end
     object Edit5: TEdit
@@ -12252,13 +12258,15 @@ object inicio: Tinicio
       Top = 118
       Width = 386
       Height = 27
-      Hint = 'Commit'
+      Hint = 'Adicione um Commit'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 1
     end
     object BitBtn1: TBitBtn
@@ -12286,7 +12294,6 @@ object inicio: Tinicio
     ParentFont = False
     TabOrder = 3
     Visible = False
-    OnKeyPress = Memo1KeyPress
   end
   object BitBtn2: TBitBtn
     Left = 8
@@ -12350,6 +12357,7 @@ object inicio: Tinicio
       Caption = 'GitBash'
       object Ativar1: TMenuItem
         Caption = 'Ativar'
+        Hint = 'Ativa uma aba para comando no CMD/Git-Bash'
         ShortCut = 49217
         OnClick = Ativar1Click
       end
@@ -12358,26 +12366,31 @@ object inicio: Tinicio
       end
       object Novorepositrio1: TMenuItem
         Caption = 'Novo reposit'#243'rio'
+        Hint = 'Cria um novo reposit'#243'rio'
         ShortCut = 16449
         OnClick = Novorepositrio1Click
       end
       object Adicionararquivos1: TMenuItem
         Caption = 'Adicionar arquivos'
+        Hint = 'Adiciona os arquivos existentes ao reposit'#243'rio'
         ShortCut = 16467
         OnClick = Adicionararquivos1Click
       end
       object Enviararquivos1: TMenuItem
         Caption = 'Adicionar Commit'
+        Hint = 'Cria um novo commit'
         ShortCut = 16452
         OnClick = Enviararquivos1Click
       end
       object AdicionarCommit1: TMenuItem
         Caption = 'Adicionar Remote'
+        Hint = 'Adiciona ao remote desejado'
         ShortCut = 16454
         OnClick = AdicionarCommit1Click
       end
       object Enviararquivos2: TMenuItem
         Caption = 'Enviar arquivos'
+        Hint = 'Envia os arquivos para o reposit'#243'rio Github'
         ShortCut = 16455
         OnClick = Enviararquivos2Click
       end
@@ -12386,37 +12399,52 @@ object inicio: Tinicio
       end
       object Clonararquivos1: TMenuItem
         Caption = 'Clonar arquivos'
+        Hint = 'Baixa os arquivos de outro usuario'
         ShortCut = 49219
         OnClick = Clonararquivos1Click
-      end
-      object Atualizararquivos1: TMenuItem
-        Caption = 'Atualizar arquivos'
-        ShortCut = 49241
-        OnClick = Atualizararquivos1Click
       end
       object N3: TMenuItem
         Caption = '-'
       end
       object AdicionarProxy1: TMenuItem
         Caption = 'Adicionar Proxy'
+        Hint = 'Adiciona um proxy caso precise de um'
         ShortCut = 49232
         OnClick = AdicionarProxy1Click
       end
       object RemoverProxy2: TMenuItem
         Caption = 'Remover Proxy'
+        Hint = 'Remote o proxy atualmente utilizado'
         ShortCut = 49240
         OnClick = RemoverProxy2Click
       end
       object AdicionarEmail1: TMenuItem
         Caption = 'Adicionar Email'
+        Hint = 'Adiciona seu email utilizado no Github'
         ShortCut = 49221
         OnClick = AdicionarEmail1Click
       end
       object AdicionarUsuario1: TMenuItem
         Caption = 'Adicionar Usuario'
+        Hint = 'Adiciona o nome do usuario do Github ou dono do arquivo.'
         ShortCut = 49237
         OnClick = AdicionarUsuario1Click
       end
     end
+    object utorial1: TMenuItem
+      Caption = 'Ajuda'
+      object Oquegit1: TMenuItem
+        Caption = 'Perguntas frequentes'
+        OnClick = Oquegit1Click
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    DefaultExt = '.exe'
+    Filter = 'Git-Bash Executavel|git-bash.exe'
+    InitialDir = 'c:/'
+    Title = 'Arquivo Git-Bash'
+    Left = 280
+    Top = 248
   end
 end

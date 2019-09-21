@@ -34,7 +34,6 @@ procedure TForm2.BitBtn1Click(Sender: TObject);
 begin
   Proxy := edit1.Text;
   inicio.Show;
-  WinExec('cmd.exe /C git config --global http.proxy http://aluno:aluno@192.168.0.1:8080', sw_hide);
   if (inicio.Ativar1.Checked = false) or (inicio.Ativar1.Checked = true) then
   begin
     inicio.Ativar1.Checked := true;
@@ -42,10 +41,10 @@ begin
     inicio.Memo1.Visible := true;
     inicio.Bitbtn2.visible := true;
     form2.Hide;
-    sleep(1200);
+    sleep(100);
     if (Pos('Tainara', proxy)) or Pos('Victoria', proxy) or Pos('Santos', proxy) or (Pos('Guidorizzi', proxy)) or Pos('Bardelin', proxy) or Pos('Lima', proxy) <> 0 then
       begin
-        inicio.Memo1.Lines.Add(proxy+'?!');
+        inicio.Memo1.Lines.Add('Proxy configuado para: '+proxy+'?');
       end
         else
       begin
