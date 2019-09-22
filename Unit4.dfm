@@ -4,8 +4,8 @@ object Form4: TForm4
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Easter Eggs'
-  ClientHeight = 204
-  ClientWidth = 517
+  ClientHeight = 217
+  ClientWidth = 511
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11580,14 +11580,17 @@ object Form4: TForm4
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
   OldCreateOrder = False
   Position = poDesktopCenter
+  ShowHint = False
   OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 19
   object Image1: TImage
     Left = 56
-    Top = 17
+    Top = 22
     Width = 65
     Height = 65
+    Hint = 'Tainara Guidorizzi'
+    ParentShowHint = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000000400000
       00400806000000AA6971DE000000097048597300000B1300000B1301009A9C18
@@ -11651,13 +11654,16 @@ object Form4: TForm4
       0157BD0D08761728AB18BB0B885CD57E8048204F30540418ED09063580CBDDFF
       3502821C80E9728D80701170C5C97F6720515F205CE9260000000049454E44AE
       426082}
+    ShowHint = True
     OnClick = Image1Click
   end
   object Image2: TImage
     Left = 221
-    Top = 17
+    Top = 22
     Width = 65
     Height = 65
+    Hint = 'Maria Victoria'
+    ParentShowHint = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000000400000
       00400806000000AA6971DE000000097048597300000B1300000B1301009A9C18
@@ -11742,27 +11748,30 @@ object Form4: TForm4
       113FAD497E28CB0008DC4BD03EB8790740627A3A0DDEE94C38DC5709D1D6247D
       F20640A68BCA56DF4E11077486F27F007205C0FBAEFC176D39F95F212CC89600
       00000049454E44AE426082}
+    ShowHint = True
     OnClick = Image2Click
   end
   object Label1: TLabel
     Left = 13
-    Top = 88
+    Top = 93
     Width = 150
     Height = 19
     Caption = 'Tainara Guidorizzi'
   end
   object Label2: TLabel
     Left = 197
-    Top = 88
+    Top = 93
     Width = 114
     Height = 19
     Caption = 'Maria Victoria'
   end
   object Image3: TImage
-    Left = 380
-    Top = 17
+    Left = 379
+    Top = 22
     Width = 65
     Height = 65
+    Hint = 'Ana Carolina Lima'
+    ParentShowHint = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000000400000
       00400806000000AA6971DE000000097048597300000B1300000B1301009A9C18
@@ -11839,28 +11848,41 @@ object Form4: TForm4
       F10A0114A6B04AD0327E00EBBACA61FBD24E0043D29D71EEBB2166FDF43A77C5
       B9DF2A0424D580D6AEDFED65D02BF23F01E922E05F277F0368ACAA5F464BBAFB
       0000000049454E44AE426082}
+    ShowHint = True
     OnClick = Image3Click
   end
   object Label3: TLabel
     Left = 339
-    Top = 88
+    Top = 93
     Width = 149
     Height = 19
     Caption = 'Ana Carolina Lima'
   end
   object Label4: TLabel
-    Left = 59
-    Top = 130
-    Width = 390
-    Height = 19
-    Caption = 'Esse programa foi desenvolvido, gra'#231'as a voc'#234's!'
+    Left = 32
+    Top = 128
+    Width = 437
+    Height = 57
+    Alignment = taCenter
+    Caption = 
+      'Esse programa foi desenvolvido, gra'#231'as a voc'#234's! e todos os outro' +
+      's alunos com difiuldades com o git, espero que tenha ajudado! - ' +
+      'Douglas'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    WordWrap = True
   end
   object Image4: TImage
     Left = 422
-    Top = -6
+    Top = -1
     Width = 64
     Height = 47
-    Hint = 'Douglas Marques reagiu a sua foto'
+    Hint = 'Douglas Marques reagiu a sua representa'#231#227'o'
+    ParentShowHint = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000000400000
       00400806000000AA6971DE000000017352474200AECE1CE90000000467414D41
@@ -11891,13 +11913,15 @@ object Form4: TForm4
       C7C6FF478B320029590FE4F24F26930BFF7EB40802088334006A03D4D200A80D
       504B03A036402D0D80DA00B534006A03D4D200A80D506BD503F80959847350E4
       31758B0000000049454E44AE426082}
+    ShowHint = True
   end
   object Image5: TImage
     Left = 262
-    Top = -6
+    Top = -1
     Width = 64
     Height = 47
-    Hint = 'Douglas Marques reagiu a sua foto'
+    Hint = 'Douglas Marques reagiu a sua representa'#231#227'o'
+    ParentShowHint = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000000400000
       00400806000000AA6971DE000000017352474200AECE1CE90000000467414D41
@@ -11928,13 +11952,15 @@ object Form4: TForm4
       C7C6FF478B320029590FE4F24F26930BFF7EB40802088334006A03D4D200A80D
       504B03A036402D0D80DA00B534006A03D4D200A80D506BD503F80959847350E4
       31758B0000000049454E44AE426082}
+    ShowHint = True
   end
   object Image6: TImage
     Left = 100
-    Top = -6
+    Top = -1
     Width = 64
     Height = 47
-    Hint = 'Douglas Marques reagiu em sua foto'
+    Hint = 'Douglas Marques reagiu em sua representa'#231#227'o'
+    ParentShowHint = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000000400000
       00400806000000AA6971DE000000017352474200AECE1CE90000000467414D41
@@ -11965,40 +11991,44 @@ object Form4: TForm4
       C7C6FF478B320029590FE4F24F26930BFF7EB40802088334006A03D4D200A80D
       504B03A036402D0D80DA00B534006A03D4D200A80D506BD503F80959847350E4
       31758B0000000049454E44AE426082}
-  end
-  object Label5: TLabel
-    Left = 98
-    Top = 148
-    Width = 330
-    Height = 19
-    Caption = 'e todos os outros alunos com difiuldades'
+    ShowHint = False
   end
   object Label6: TLabel
-    Left = 73
+    Left = 64
     Top = 166
-    Width = 385
+    Width = 5
     Height = 19
-    Caption = 'com o git, espero que tenha ajudado! - Douglas'
   end
   object Label7: TLabel
     Left = 137
-    Top = 14
+    Top = 19
     Width = 10
-    Height = 15
+    Height = 19
     Caption = '1'
   end
   object Label8: TLabel
     Left = 299
-    Top = 14
+    Top = 19
     Width = 10
-    Height = 15
+    Height = 19
     Caption = '1'
   end
   object Label9: TLabel
     Left = 459
-    Top = 14
+    Top = 19
     Width = 10
-    Height = 15
+    Height = 19
     Caption = '1'
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 201
+    Width = 511
+    Height = 16
+    Panels = <
+      item
+        Width = 50
+      end>
+    ExplicitTop = 194
   end
 end
