@@ -11580,7 +11580,6 @@ object Form4: TForm4
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
   OldCreateOrder = False
   Position = poDesktopCenter
-  ShowHint = False
   OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 19
@@ -11861,7 +11860,7 @@ object Form4: TForm4
   object Label4: TLabel
     Left = 32
     Top = 128
-    Width = 437
+    Width = 424
     Height = 57
     Alignment = taCenter
     Caption = 
@@ -11959,7 +11958,7 @@ object Form4: TForm4
     Top = -1
     Width = 64
     Height = 47
-    Hint = 'Douglas Marques reagiu em sua representa'#231#227'o'
+    Hint = 'Douglas Marques reagiu a sua representa'#231#227'o'
     ParentShowHint = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000000400000
@@ -12029,6 +12028,5 @@ object Form4: TForm4
       item
         Width = 50
       end>
-    ExplicitTop = 194
   end
 end

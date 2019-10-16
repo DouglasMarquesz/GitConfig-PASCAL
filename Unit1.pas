@@ -58,6 +58,9 @@ type
     OpenDialog1: TOpenDialog;
     utorial1: TMenuItem;
     Oquegit1: TMenuItem;
+    Image3: TImage;
+    Leitura1: TMenuItem;
+    Reportarerros1: TMenuItem;
     procedure ApplicationEvents1ActionExecute(Action: TBasicAction;
       var Handled: Boolean);
     procedure BitBtn1Click(Sender: TObject);
@@ -81,6 +84,8 @@ type
     procedure AdicionarUsuario1Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
     procedure Oquegit1Click(Sender: TObject);
+    procedure Leitura1Click(Sender: TObject);
+    procedure Reportarerros1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -99,7 +104,7 @@ implementation
 
 uses
 
-Unit2, Unit3, Unit4, Unit5;
+Unit2, Unit3, Unit4, Unit5, URLMON;
 
 //Apareça as dicas em baixo do formulario
 procedure Tinicio.Adicionararquivos1Click(Sender: TObject);
@@ -146,6 +151,7 @@ procedure Tinicio.ApplicationEvents1ActionExecute(Action: TBasicAction;
   var Handled: Boolean);
 begin
   Statusbar1.Panels[0].Text := Application.Hint;
+  form4.Statusbar1.Panels[0].Text := Application.Hint;
 end;
 
 //Ao Clicar no Botao
@@ -153,6 +159,7 @@ procedure Tinicio.Ativar1Click(Sender: TObject);
 begin
 if Ativar1.Checked = false then
   begin
+    bitbtn1.Visible:= false;
     Ativar1.Checked := true;
     Ativar1.caption := 'Desativar';
     Memo1.Visible := true;
@@ -160,6 +167,7 @@ if Ativar1.Checked = false then
   end
     else
   begin
+    bitbtn1.Visible:= true;
     Ativar1.Checked := false;
     Ativar1.caption := 'Ativar';
     Memo1.Visible := false;
@@ -234,12 +242,16 @@ begin
   if (Pos('Tainara', proxy)) or Pos('Victoria', proxy) or Pos('Santos', proxy) or (Pos('Guidorizzi', proxy)) or Pos('Bardelin', proxy) or Pos('Lima', proxy) <> 0 then
       begin
         form4.Show;
+        image3.Visible:=true;
+        inicio.Hide;
       end
         else
       begin
         AssignFile(batcommand, 'Commands.bat');
         Rewrite(batcommand);
         Writeln(batcommand, '@echo off');
+        Writeln(batcommand, 'git rm -r --cached Commands.bat');
+        Writeln(batcommand, 'git rm -r --cached GitConfig.exe');
         Writeln(batcommand, Memo1.Lines.Text);
         Writeln(batcommand, 'pause');
         Writeln(batcommand, 'del commands.bat');
@@ -302,8 +314,31 @@ NoInstall:=0;
               if NoInstall=2 then
                 begin
                   MessageDlg('Erro N1M1 - Instale o Git para que possa utilizar o programa!', mtWarning, [mbOk], 0);
+                  HlinkNavigateString(nil,'https://git-scm.com/downloads');
                   Application.Terminate;
                 end;
+end;
+
+procedure Tinicio.Leitura1Click(Sender: TObject);
+begin
+if fileexists('Readme.txt') then
+  begin
+    if MessageDlg('Já existe um arquivo Readme.txt, deseja apagar?', mtConfirmation, [mbYes,mbNo], 0 ) = mrYes then
+      begin
+        WinExec('cmd.exe /C del Readme.txt', sw_hide);
+      end
+        else
+      begin
+        WinExec('cmd.exe /C start Readme.txt', sw_hide);
+      end;
+
+  end
+    else
+  begin
+    WinExec('cmd.exe /C echo "Coloque a descricao do seu projeto aqui!" >> Readme.txt', sw_hide);
+    sleep(100);
+    WinExec('cmd.exe /C start Readme.txt', sw_hide);
+  end;
 end;
 
 procedure Tinicio.Lembrar1Click(Sender: TObject);
@@ -350,7 +385,9 @@ end;
 //Remover Proxy
 procedure Tinicio.RemoverProxy1Click(Sender: TObject);
 begin
-  WinExec('git config --global --unset http.proxy', sw_show);
+  WinExec('git config --global --unset http.proxy', sw_hide);
+  sleep(200);
+  Showmessage('Proxy atual removido!');
 end;
 
 procedure Tinicio.RemoverProxy2Click(Sender: TObject);
@@ -359,6 +396,11 @@ if Ativar1.Checked = true then
   begin
     Memo1.Lines.Add('git config --global --unset http.proxy');
   end;
+end;
+
+procedure Tinicio.Reportarerros1Click(Sender: TObject);
+begin
+  HlinkNavigateString(nil,'https://github.com/DouglasMarquesz/GitConfig-PASCAL');
 end;
 
 procedure Tinicio.Sair1Click(Sender: TObject);
